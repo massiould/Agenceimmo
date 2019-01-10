@@ -11,7 +11,7 @@ public class Agence {
 	private List<Annonce> listeAnnonce;
 	private List<BienImmobilier> listeBienImmobilier;
 	
-	public Agence(List<RDV> listeRDV, List<Annonce> listeAnnonce, List<BienImmobilier>) {
+	public Agence(List<RDV> listeRDV, List<Annonce> listeAnnonce, List<BienImmobilier> listeBienImmobilier) {
 		this.listeRDV = new ArrayList<RDV>();
 		this.listeAnnonce = new ArrayList<Annonce>();
 		this.listeBienImmobilier = new ArrayList<BienImmobilier>();

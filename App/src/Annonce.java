@@ -2,6 +2,8 @@
  * @author Kamal Aarab
  */
 
+
+
 public class Annonce {
 
 	private Media media;
@@ -10,7 +12,7 @@ public class Annonce {
 	
 	public Annonce(Media media) {
 		this.media = media;
-		this.BienImmobilier = null;
+		this.bienImmobilier = null;
 		this.agence = null;
 		
 	}
