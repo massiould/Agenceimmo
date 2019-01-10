@@ -4,29 +4,27 @@
 
 public class Annonce {
 
-	Media media;
-	BienImmobilier bienImmobilier;
+	private Media media;
+	private BienImmobilier bienImmobilier;
+	private Agence agence;
 	
-	public Annonce(Media media, BienImmobilier bienImmo) {
+	public Annonce(Media media) {
 		this.media = media;
-		this.BienImmobilier = bienImmo;
+		this.BienImmobilier = null;
+		this.agence = null;
+		
 	}
 	
 	/*
-	 * Permet de créer une annonce.
-	 * @param media
-	 * 				Le media qui va servir à la diffusion de l'annonce.
+	 * Permet d'ajouter une annonce à une agence pour un bien immobilier.
+	 * @param agence
+	 * 				L'agence à qui ajouter l'annonce.
+	 * @param bienImmo
+	 * 				Le bien immobilier à qui ajouter l'annonce.
 	 */
-	public Annonce creerAnnonce(Media media){
-		return null;
-	} 
-	
-	/*
-	 * Permet de retirer une annonce.
-	 * @param Annonce
-	 * 				L'annonce à retirer.
-	 */
-	public void retirerAnnonce(Annonce annonce) {
+	public void ajouterAnnonce(Agence agence, BienImmobilier bienImmo) {
+		this.agence = agence;
+		this.bienImmobilier = bienImmo;
 		
 	}
 }
