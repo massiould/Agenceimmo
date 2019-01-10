@@ -3,6 +3,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Agence {
@@ -11,19 +12,28 @@ public class Agence {
 	private List<Annonce> listeAnnonce;
 	private List<BienImmobilier> listeBienImmobilier;
 	
-	public Agence(List<RDV> listeRDV, List<Annonce> listeAnnonce, List<BienImmobilier>) {
+	public Agence(List<RDV> listeRDV, List<Annonce> listeAnnonce, List<BienImmobilier> listeBienImmo) {
 		this.listeRDV = new ArrayList<RDV>();
 		this.listeAnnonce = new ArrayList<Annonce>();
 		this.listeBienImmobilier = new ArrayList<BienImmobilier>();
 	}
 	
 	/*
+	 * 
+	 * 
+	 */
+	
+	public void inscrireBienImmo(Personne personne,String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier) {
+		BienImmobilier bienImmo = new BienImmobilier(adresse, orientation, prix, dateVente, dateDeDisponibilite, numeroBienImmobilier, personne);
+		
+	}
+	/*
 	 * Permet de contacter un acheteur qui a un bien immobilier conforme à son voeux 
 	 */
 	public void contacterAcheteur(Personne personne) {
-		 if(personne.checkVoeux() == true) {
+		 //if(personne.checkVoeux() == true) {
 			 
-		 }
+		 //}
 	}
 	
 	/*
@@ -40,8 +50,7 @@ public class Agence {
 	 */
 	public void retirerAnnonce(Annonce annonce) {
 		this.listeAnnonce.remove(annonce);
-	}
-		
+	}	
 	
 	/*
 	 * Permet de récupérer la liste des rendez-vous d'une agence

@@ -8,14 +8,18 @@ public class BienImmobilier {
 	    private Date dateVente ;
 	    private Date dateDeDisponibilite;
 	    private int numeroBienImmobilier;
+	    private Personne vendeur;
+	    private Personne acheteur;
 	    
-	    public BienImmobilier (String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier){
+	    public BienImmobilier (String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier, Personne vendeur){
 	     this.adresse = adresse;
 	     this.orientation = orientation ;
 	     this.prix =prix ;
 	     this.dateVente =dateVente;
 	     this.dateDeDisponibilite=dateDeDisponibilite;
 	     this.numeroBienImmobilier=numeroBienImmobilier;
+	     this.vendeur = vendeur;
+	     this.acheteur = null;
 	    }
 	    	
 	   public String getAdresse(){
