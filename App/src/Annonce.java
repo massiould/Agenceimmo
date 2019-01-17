@@ -2,6 +2,8 @@
  * @author Kamal Aarab
  */
 
+
+
 public class Annonce {
 
 	private Media media;
@@ -11,15 +13,19 @@ public class Annonce {
 	public Annonce(Media media, Agence agence) {
 		this.media = media;
 		this.bienImmobilier = null;
+
+
+
 		this.agence = agence;
+
 		
 	}
 	
 	/*
-	 * Permet d'ajouter une annonce à une agence pour un bien immobilier.
+	 * Permet d'ajouter une annonce Ã  une agence pour un bien immobilier.
 	 *
 	 * @param bienImmo
-	 * 				Le bien immobilier à qui ajouter l'annonce.
+	 * 				Le bien immobilier Ã  qui ajouter l'annonce.
 	 */
 	public void ajouterAnnonce(BienImmobilier bienImmo) {
 		this.bienImmobilier = bienImmo;
