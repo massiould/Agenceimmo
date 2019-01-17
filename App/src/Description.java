@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * @author Kamal Aarab
+ * @author Kamal Aarab and Massi Ouldrabah
  */
 public class Description {
 
-	private Annonce annonce;
-	private BienImmobilier bienImmobilier;
-	private List<Docs> doc = new ArrayList<Docs>();
+	Annonce annonce;
+	BienImmobilier bienImmobilier;
+	List<Docs> doc = new ArrayList<Docs>();
 
 	public Description(Annonce annonce, BienImmobilier bienImmo) {
 		this.annonce = annonce;

@@ -1,21 +1,24 @@
+/*
+ * @author Kamal Aarab and Massi Ouldrabah
+ */
 
 import java.util.Date ;
 
 public class BienImmobilier {
-	private String adresse ;
-	private String orientation;
-	private int prix;
-	private Date dateVente ;
-	private Date dateDeDisponibilite;
-	private int numeroBienImmobilier;
-	private static Personne vendeur;
-	protected Personne acheteur;
+	String adresse ;
+	String orientation;
+	int prix;
+	Date dateVente;
+	Date dateDeDisponibilite;
+	int numeroBienImmobilier;
+	Personne vendeur;
+	Personne acheteur;
 
-	public BienImmobilier (String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier, Personne vendeur){
+	public BienImmobilier (String adresse , String orientation , int prix, Date dateDeDisponibilite ,int numeroBienImmobilier, Personne vendeur){
 		this.adresse = adresse;
 		this.orientation = orientation ;
 		this.prix = prix ;
-		this.dateVente = dateVente;
+		this.dateVente = null;
 		this.dateDeDisponibilite = dateDeDisponibilite;
 		this.numeroBienImmobilier = numeroBienImmobilier;
 		this.vendeur = vendeur;
@@ -74,8 +77,8 @@ public class BienImmobilier {
 	/**
 	 * @return the vendeur of BienImmobilier
 	 */
-	public static Personne getVendeur() {
-		return vendeur;
+	public Personne getVendeur() {
+		return this.vendeur;
 	}
 }
 

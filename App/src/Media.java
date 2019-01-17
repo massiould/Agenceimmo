@@ -1,5 +1,5 @@
 /*
- * @author Kamal Aarab
+ * @author Kamal Aarab and Massi Ouldrabah
  */
 
 public enum Media {

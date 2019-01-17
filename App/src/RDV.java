@@ -1,14 +1,15 @@
 /*
- * @author Kamal Aarab
+ * @author Kamal Aarab and Massi Ouldrabah
  */
+
 import java.util.Date;
 
 public class RDV {
-	private Agence agence;
-	private Date dateVente;
-	private Date dateDeDisponibilite;
+	Date dateVente;
+	Date dateDeDisponibilite;
 
-	public RDV(Agence agence) {
-		this.agence = agence;
+	public RDV(Date dateVente, Date dateDeDisponibilite) {
+		this.dateVente = dateVente;
+		this.dateDeDisponibilite = dateDeDisponibilite;
 	}
 }

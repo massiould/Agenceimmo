@@ -1,18 +1,22 @@
+/*
+ * @author Kamal Aarab and Massi Ouldrabah
+ */
+
 import java.util.Date;
 
 public class Maison extends BienImmobilier{
-		private int surfaceHabitable;
-		private int nombrePiece;
-		private int nombreEtage;
-		private String moyenDeChauffage;
+		int surfaceHabitable;
+		int nombrePiece;
+		int nombreEtage;
+		String moyenDeChauffage;
 		
 	public Maison(String adresse, String orientation, int prix, Date dateVente, Date dateDeDisponibilite,
-			int numeroBienImmobilier, String moyenDeChauffage, int nombreEtage, int nombrePiece) {
-		super(adresse, orientation, prix, dateVente, dateDeDisponibilite, numeroBienImmobilier, getVendeur());
-		this.setMoyenDeChauffage(moyenDeChauffage);
-		this.setNombreEtage(nombreEtage);
-		this.setNombrePiece(nombrePiece);
-		// TODO Auto-generated constructor stub
+			int numeroBienImmobilier, int surfaceHabitable, int nombrePiece, int nombreEtage, String moyenDeChauffage) {
+		super(adresse, orientation, prix, dateVente, dateDeDisponibilite, numeroBienImmobilier, vendeur);
+		this.surfaceHabitable = surfaceHabitable;
+		this.nombrePiece = nombrePiece;
+		this.nombreEtage = nombreEtage;
+		this.moyenDeChauffage = moyenDeChauffage;
 	}
 
 	/**
