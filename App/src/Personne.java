@@ -1,4 +1,4 @@
-import java.util.Date;
+
 
 abstract class Personne {
 	
@@ -7,12 +7,17 @@ abstract class Personne {
 	private String adressePersonne;
 	private String mail;
 	private int numeroDeTelephone;
+	public Voeux voeux;
 	 
-    public Personne (String mail ,int numeroDeTelephone ,String nom , String adressePersonne){
+    public Personne (String mail ,int numeroDeTelephone ,String nom , String adressePersonne , Voeux voeux){
     }
     	 public String getnom(){
   		   return this.nom;
   		   }
+    	 public Voeux getVoeux() {
+    		 
+    	 return this.voeux;
+    	 }
   		 public String getadressePersonne(){
   		   return this.adressePersonne;
   		   }

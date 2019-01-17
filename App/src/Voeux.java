@@ -1,13 +1,14 @@
 
 public class Voeux {
-	private String orientationSouhaitee;
-	private int prixSouhaitee;
-	private int surfaceSouhaitee;
-	private String localisationSouhaitee;
-	private int nbrPieceSouhaitee;
-	private int typeDeBien;
-	 public Voeux(String orientationSouhaitee, int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, int typeDeBien ) {
-		 this.orientationSouhaitee= orientationSouhaitee;
+	 
+	 int prixSouhaitee;
+	 int surfaceSouhaitee;
+	 String localisationSouhaitee;
+	 int nbrPieceSouhaitee;
+	 BienImmobilier typeDeBien;
+	 
+	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, BienImmobilier typeDeBien ) {
+		
 		 this.prixSouhaitee = prixSouhaitee;
 		 this.surfaceSouhaitee = surfaceSouhaitee;
 		 this.localisationSouhaitee = localisationSouhaitee;
@@ -17,17 +18,26 @@ public class Voeux {
 		 
 	 }
 	
-	 public String getorientationSouhaitee () {
-		 return this.orientationSouhaitee;
-	 }
+	 
 	
 	 public String getlocalisationSouhaitee () {
 		 return this.localisationSouhaitee;
 	 }
 	
-	 public int gettypeDeBien () {
+	 public BienImmobilier gettypeDeBien () {
 		 return this.typeDeBien;
 	 }
+	 public int prixSouhaitee() {
+		 return this.prixSouhaitee;
+	 }
+	 public int nbrPieceSouhaitee() {
+		 return this.nbrPieceSouhaitee;
+	 }
+	 public int surfaceSouhaitee () {
+		 return this.typeDeBien;
+	 }
+	 
+	
 	
 	
 	

@@ -20,17 +20,18 @@ public class Agence {
 	/*
 	 * Permet de contacter un acheteur qui a un bien immobilier conforme à son voeux 
 	 */
-	public void contacterAcheteur(Personne personne) {
-		 if(personne.checkVoeux() == true) {
-			 
-		 }
-	}
+
 	
 	/*
 	 * Permet de vérifier les voeux 
 	 */
-	public boolean checkVoeux() {
-		return (Boolean) null;
+	public ArrayList checkVoeux(Personne P ){
+		if  (P.voeux.typeDeBien == ) {
+			if(P.voeux.prixSouhaitee <= BienImmobilier.prix )
+			
+			
+		}
+		
 	}
 	
 	/*
