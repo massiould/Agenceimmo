@@ -8,22 +8,20 @@ public class Annonce {
 	private BienImmobilier bienImmobilier;
 	private Agence agence;
 	
-	public Annonce(Media media) {
+	public Annonce(Media media, Agence agence) {
 		this.media = media;
-		this.BienImmobilier = null;
-		this.agence = null;
+		this.bienImmobilier = null;
+		this.agence = agence;
 		
 	}
 	
 	/*
 	 * Permet d'ajouter une annonce à une agence pour un bien immobilier.
-	 * @param agence
-	 * 				L'agence à qui ajouter l'annonce.
+	 *
 	 * @param bienImmo
 	 * 				Le bien immobilier à qui ajouter l'annonce.
 	 */
-	public void ajouterAnnonce(Agence agence, BienImmobilier bienImmo) {
-		this.agence = agence;
+	public void ajouterAnnonce(BienImmobilier bienImmo) {
 		this.bienImmobilier = bienImmo;
 		
 	}
