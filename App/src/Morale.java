@@ -6,7 +6,7 @@ public class Morale extends Personne {
 	long numeroSiren;
 	String formeJuridique;
 	
-	public Morale(String mail, int numeroDeTelephone, String nom, String adressePersonne, String formeJuridique, long numeroSiren) {
+	public Morale(String nom, String adressePersonne, String mail, String numeroDeTelephone, Voeux voeux, String formeJuridique, long numeroSiren) {
 		super(mail, numeroDeTelephone, nom, adressePersonne, voeux);
 		this.formeJuridique = formeJuridique;
 		this.numeroSiren = numeroSiren;

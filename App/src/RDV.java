@@ -5,11 +5,9 @@
 import java.util.Date;
 
 public class RDV {
-	Date dateVente;
-	Date dateDeDisponibilite;
+	Date dateRDV;
 
-	public RDV(Date dateVente, Date dateDeDisponibilite) {
-		this.dateVente = dateVente;
-		this.dateDeDisponibilite = dateDeDisponibilite;
+	public RDV(Date dateRDV) {
+		this.dateRDV = dateRDV;
 	}
 }

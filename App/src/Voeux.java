@@ -3,19 +3,26 @@
  */
 
 public class Voeux {
-	 
-	 int prixSouhaitee;
-	 int surfaceSouhaitee;
-	 String localisationSouhaitee;
-	 int nbrPieceSouhaitee;
-	 String typeDeBien;
-	 
-	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien ) {
-		 this.prixSouhaitee = prixSouhaitee;
-		 this.surfaceSouhaitee = surfaceSouhaitee;
-		 this.localisationSouhaitee = localisationSouhaitee;
-		 this.nbrPieceSouhaitee = nbrPieceSouhaitee;
-		 this.typeDeBien = typeDeBien;
-	 }
-	
+
+	int prixSouhaite;
+	int surfaceSouhaitee;
+	String localisationSouhaitee;
+	int nbPieceSouhaitee;
+	String typeDeBien;
+
+	public Voeux( int prixSouhaite , int surfaceSouhaitee, String localisationSouhaitee, int nbPieceSouhaitee, String typeDeBien ) {
+		this.prixSouhaite = prixSouhaite;
+		this.surfaceSouhaitee = surfaceSouhaitee;
+		this.typeDeBien = typeDeBien;
+		this.localisationSouhaitee = localisationSouhaitee;
+
+		if(typeDeBien == "terrain") {
+			this.nbPieceSouhaitee = 0;
+		} else { 		
+			this.nbPieceSouhaitee = nbPieceSouhaitee;
+		}
+
+
+	}
+
 }
