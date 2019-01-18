@@ -50,39 +50,40 @@ public class Personne {
 	 * @param voeux
 	 */
 	public void setVoeux() {
-		Scanner clavier = new Scanner(System.in);
+		Scanner cl = new Scanner(System.in);
 		System.out.println("**************************************************************");
-		System.out.println("Quel bien cherchez-vous (maison, appartement ou terrain) ?");
-		String typeDeBien = "";
-		while(typeDeBien != "terrain" || typeDeBien != "maison" || typeDeBien != "appartement") {
-			System.out.println("Le nom du bien n'est pas correct, répondre : maison, appartement ou terrain.");
-			System.out.println("");
-			typeDeBien = clavier.nextLine();
-		}	
+		System.out.println("Quel type de bien cherchez-vous ?");
+		String typeDeBien = cl.next();
+		while(typeDeBien != "maison" || typeDeBien != "appartement" || typeDeBien != "maison") {
+			System.out.println("Ressaisir :");
+			typeDeBien = cl.next();		
+		}
 		if (typeDeBien == "terrain") {
-			System.out.println(">>> Saisir les informations pour un voeux :");
+			System.out.println(">>> Saisir les informations pour un voeux");
 			System.out.println("");
 			System.out.println("Saisir le prix :");
-			int prixSouhaite = clavier.nextInt();
+			int prixSouhaite = cl.nextInt();
 			System.out.println("Saisir la surface (m2) :");
-			int surfaceSouhaitee = clavier.nextInt();
+			int surfaceSouhaitee = cl.nextInt();
 			System.out.println("Saisir la localisation :");
-			String localisationSouhaitee = clavier.nextLine();
+			String localisationSouhaitee = cl.next();
 			voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, 0, typeDeBien);
 		} else if(typeDeBien == "maison" || typeDeBien == "appartement") {
-			System.out.println(">>> Saisir les informations pour un voeux :");
+			System.out.println(">>> Saisir les informations pour un voeux");
 			System.out.println("");
 			System.out.println("Saisir le prix :");
-			int prixSouhaite = clavier.nextInt();
+			int prixSouhaite = cl.nextInt();
 			System.out.println("Saisir la surface (m2) :");
-			int surfaceSouhaitee = clavier.nextInt();
+			int surfaceSouhaitee = cl.nextInt();
 			System.out.println("Saisir le nombre de piece (si terrain ne rien saisir et taper sur entrer) :");
-			int nbPieceSouhaitee = clavier.nextInt();
+			int nbPieceSouhaitee = cl.nextInt();
 			System.out.println("Saisir la localisation :");
-			String localisationSouhaitee = clavier.nextLine();
+			String localisationSouhaitee = cl.next();
 			voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, nbPieceSouhaitee, typeDeBien);
 		}
 		this.voeux = voeux;
+		System.out.println("Le voeux a été changé !");
+		//cl.close();
 	}
 
 	/**

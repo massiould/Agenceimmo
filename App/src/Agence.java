@@ -35,7 +35,7 @@ public class Agence {
 		Scanner clavier = new Scanner(System.in);
 		System.out.println("**************************************************************");
 		if(typeDeBien == "terrain") {
-			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente :");
+			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente");
 			System.out.println("");
 			System.out.println("Donner la surface au sol :");
 			int surfaceSol = clavier.nextInt();
@@ -46,7 +46,7 @@ public class Agence {
 			this.listeClient.add(vendeur);
 
 		} else if (typeDeBien == "maison") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison à la vente :");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison à la vente");
 			System.out.println("");
 			System.out.println("Donner la surface habitable :");
 			int surfaceHabitable = clavier.nextInt();
@@ -55,13 +55,13 @@ public class Agence {
 			System.out.println("Donner le nombre d'etages :");
 			int nombreEtage = clavier.nextInt();
 			System.out.println("Donner le moyen de chauffage :");
-			String moyenDeChauffage = clavier.nextLine();
+			String moyenDeChauffage = clavier.next();
 			BienImmobilier bienImmo = new Maison(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceHabitable, nombreDePiece, nombreEtage, moyenDeChauffage);
 			this.listeBienImmobilier.add(bienImmo);
 			this.listeClient.add(vendeur);
 
 		} else if (typeDeBien == "appartement") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement à la vente :");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement à la vente");
 			System.out.println("");
 			System.out.println("Donner le nombre de pieces :");
 			int nombreDePiece = clavier.nextInt();
@@ -73,6 +73,7 @@ public class Agence {
 			this.listeBienImmobilier.add(bienImmo);
 			this.listeClient.add(vendeur);
 		}
+		//clavier.close();
 
 	}
 
@@ -86,6 +87,7 @@ public class Agence {
 			System.out.println("Client déjà inscrit dans l'agence.");
 		} else {
 			this.listeClient.add(personne);
+			System.out.println("Le clien a été inscrit à l'agence.");
 		}
 	}
 
@@ -150,8 +152,13 @@ public class Agence {
 	public static void main(String[] args) {
 		Agence agence = new Agence("Agence Toulouse Mirail");
 		Personne p1 = new Personne("Kamal", "6 rue des roses", "kamal@etu.fr", "0629564521");
-		agence.inscrireBienImmo(p1, "Toulouse Nord", "sud", 3000000, "2019-02-2", "terrain");
+		Personne p2 = new Personne("Massi", "5 rue des roses", "massi@etu.fr", "1546464656");
+		
+		agence.inscrireBienImmo(p1, "Toulouse Nord", "sud", 3000000, "2019-02-2", "maison");
+		
 		agence.inscrireClient(p1); // renvoie : client déjà inscrit	
+		agence.inscrireClient(p2); // renvoie : client inscrit	
+		
 		p1.setVoeux();
 		//p1.checkVoeux()
 	}

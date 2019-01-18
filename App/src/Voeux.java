@@ -10,7 +10,7 @@ public class Voeux {
 	int nbPieceSouhaitee;
 	String typeDeBien;
 
-	public Voeux( int prixSouhaite , int surfaceSouhaitee, String localisationSouhaitee, int nbPieceSouhaitee, String typeDeBien ) {
+	public Voeux( int prixSouhaite , int surfaceSouhaitee, String localisationSouhaitee, int nbPieceSouhaitee, String typeDeBien) {
 		this.prixSouhaite = prixSouhaite;
 		this.surfaceSouhaitee = surfaceSouhaitee;
 		this.typeDeBien = typeDeBien;
