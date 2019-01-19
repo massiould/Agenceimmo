@@ -5,9 +5,9 @@ public class Voeux {
 	 int surfaceSouhaitee;
 	 String localisationSouhaitee;
 	 int nbrPieceSouhaitee;
-	 BienImmobilier typeDeBien;
+	 String typeDeBien;
 	 
-	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, BienImmobilier typeDeBien ) {
+	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien ) {
 		
 		 this.prixSouhaitee = prixSouhaitee;
 		 this.surfaceSouhaitee = surfaceSouhaitee;
@@ -24,7 +24,7 @@ public class Voeux {
 		 return this.localisationSouhaitee;
 	 }
 	
-	 public BienImmobilier gettypeDeBien () {
+	 public String gettypeDeBien () {
 		 return this.typeDeBien;
 	 }
 	 public int prixSouhaitee() {
@@ -34,7 +34,7 @@ public class Voeux {
 		 return this.nbrPieceSouhaitee;
 	 }
 	 public int surfaceSouhaitee () {
-		 return this.typeDeBien;
+		 return this.surfaceSouhaitee;
 	 }
 	 
 	

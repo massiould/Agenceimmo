@@ -2,14 +2,14 @@
 import java.util.Date ;
 
 public class BienImmobilier {
-	private String adresse ;
-	private String orientation;
-	private int prix;
-	private Date dateVente ;
-	private Date dateDeDisponibilite;
-	private int numeroBienImmobilier;
-	private static Personne vendeur;
-	protected Personne acheteur;
+	 String adresse ;
+	 String orientation;
+	 int prix;
+	 Date dateVente ;
+	 Date dateDeDisponibilite;
+	 int numeroBienImmobilier;
+	 static Personne vendeur;
+	 Personne acheteur;
 
 	public BienImmobilier (String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier, Personne vendeur){
 		this.adresse = adresse;

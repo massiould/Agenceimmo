@@ -45,8 +45,15 @@ public class Agence {
 	 * Permet de vérifier les voeux 
 	 */
 	public ArrayList checkVoeux(Personne P ){
-		if  (P.voeux.typeDeBien == ) {
-			if(P.voeux.prixSouhaitee <= BienImmobilier.prix )
+		if  (P.voeux.typeDeBien == "TERRAIN" ) {
+			for (  BienImmobilier i : this.listeBienImmobilier) {
+				if(P.voeux.prixSouhaitee <= i.)
+				
+				
+			}
+		}
+		return null;
+	
 			
 			
 		}
