@@ -4,7 +4,6 @@
 
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,7 +33,50 @@ public class Agence {
 	void inscrireBienImmo(Personne vendeur, String adresse, String orientation, int prix, String dateDeDisponibilite, String typeDeBien) {
 		Scanner clavier = new Scanner(System.in);
 		System.out.println("**************************************************************");
-		if(typeDeBien == "terrain") {
+		
+		switch (typeDeBien) {
+			case "terrain":
+				System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente");
+				System.out.println("");
+				System.out.println("Donner la surface au sol :");
+				int surfaceSol = clavier.nextInt();
+				System.out.println("Donner la longueur de la facade :");
+				int longueurFacade = clavier.nextInt();
+				BienImmobilier bienImmo = new Terrain(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceSol, longueurFacade);
+				this.listeBienImmobilier.add(bienImmo);
+				this.listeClient.add(vendeur);
+				break;
+				
+			case "appartement":
+				System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison à la vente");
+				System.out.println("");
+				System.out.println("Donner la surface habitable :");
+				int surfaceHabitable = clavier.nextInt();
+				System.out.println("Donner le nombre de pieces :");
+				int nombreDePiece = clavier.nextInt();
+				System.out.println("Donner le nombre d'etages :");
+				int nombreEtage = clavier.nextInt();
+				System.out.println("Donner le moyen de chauffage :");
+				String moyenDeChauffage = clavier.next();
+				BienImmobilier bienImmo1 = new Maison(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceHabitable, nombreDePiece, nombreEtage, moyenDeChauffage);
+				this.listeBienImmobilier.add(bienImmo1);
+				this.listeClient.add(vendeur);
+				break;
+				
+			case "maison":
+				System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement à la vente");
+				System.out.println("");
+				System.out.println("Donner le nombre de pieces :");
+				int nombreDePiece1 = clavier.nextInt();
+				System.out.println("Donner le numero de l'etage ou se situe l'appartement :");
+				int numeroEtage = clavier.nextInt();
+				System.out.println("Donner les charges mensuelles :");
+				int chargesMensuelles = clavier.nextInt();
+				BienImmobilier bienImmo2 = new Appartement(adresse, orientation, prix, dateDeDisponibilite, vendeur, nombreDePiece1, numeroEtage, chargesMensuelles);
+				this.listeBienImmobilier.add(bienImmo2);
+				this.listeClient.add(vendeur);
+		}
+		/*if(typeDeBien == "terrain") {
 			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente");
 			System.out.println("");
 			System.out.println("Donner la surface au sol :");
@@ -72,7 +114,7 @@ public class Agence {
 			BienImmobilier bienImmo = new Appartement(adresse, orientation, prix, dateDeDisponibilite, vendeur, nombreDePiece, numeroEtage, chargesMensuelles);
 			this.listeBienImmobilier.add(bienImmo);
 			this.listeClient.add(vendeur);
-		}
+		}*/
 		//clavier.close();
 
 	}
@@ -158,7 +200,7 @@ public class Agence {
 		
 		agence.inscrireClient(p1); // renvoie : client déjà inscrit	
 		agence.inscrireClient(p2); // renvoie : client inscrit	
-		
+		System.out.println(agence.getBienImmobilier());
 		p1.setVoeux();
 		//p1.checkVoeux()
 	}

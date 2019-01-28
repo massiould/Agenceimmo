@@ -51,13 +51,16 @@ public class Personne {
 	 */
 	public void setVoeux() {
 		Scanner cl = new Scanner(System.in);
+		System.out.println();
 		System.out.println("**************************************************************");
 		System.out.println("Quel type de bien cherchez-vous ?");
-		String typeDeBien = cl.next();
-		while(typeDeBien != "maison" || typeDeBien != "appartement" || typeDeBien != "maison") {
+		String typeDeBien = cl.nextLine();
+		while(!typeDeBien.equals("terrain") && !typeDeBien.equals("appartement") && !typeDeBien.equals("maison")) {
 			System.out.println("Ressaisir :");
-			typeDeBien = cl.next();		
+			System.out.println(typeDeBien);
+			typeDeBien = cl.nextLine();		
 		}
+		
 		if (typeDeBien == "terrain") {
 			System.out.println(">>> Saisir les informations pour un voeux");
 			System.out.println("");
@@ -68,6 +71,7 @@ public class Personne {
 			System.out.println("Saisir la localisation :");
 			String localisationSouhaitee = cl.next();
 			voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, 0, typeDeBien);
+			
 		} else if(typeDeBien == "maison" || typeDeBien == "appartement") {
 			System.out.println(">>> Saisir les informations pour un voeux");
 			System.out.println("");

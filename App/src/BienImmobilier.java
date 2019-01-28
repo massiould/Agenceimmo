@@ -81,6 +81,10 @@ public class BienImmobilier {
 	public Personne getVendeur() {
 		return this.vendeur;
 	}
+	
+	public String toString() {
+		return "Bien immobilier numéro "+ this.numeroBienImmobilier+"vendu par "+this.vendeur;
+	}
 }
 
 
