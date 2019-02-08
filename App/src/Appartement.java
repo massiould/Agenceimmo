@@ -2,9 +2,9 @@ import java.util.Date;
 
 public class Appartement extends BienImmobilier {	
 
-	private int nombreDePiece;
-	private int numeroEtage;
-	private int chargesMensuelles;
+	 int nombreDePiece;
+	 int numeroEtage;
+	 int chargesMensuelles;
 
 
 	public Appartement(String adresse, String orientation, int prix, Date dateVente, Date dateDeDisponibilite,
