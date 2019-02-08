@@ -140,20 +140,6 @@ public class Agence {
 	 * 				Elle prend en parametre la personne a contacter.
 	 */
 
-
-
-	/**
-	 * Permet de verifier les voeux 
-	 */
-	/*
-	public ArrayList checkVoeux(Personne P ){
-		if  (P.voeux.typeDeBien == ) {
-			if(P.voeux.prixSouhaitee <= BienImmobilier.prix )
-
-
-		}
-	 */
-
 	/**
 	 * Permet de retirer une annonce de l'agence.
 	 * @param Annonce
