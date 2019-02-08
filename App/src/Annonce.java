@@ -1,21 +1,16 @@
 /*
- * @author Kamal Aarab
+ * @author Kamal Aarab and Massi Ouldrabah
  */
-
-
 
 public class Annonce {
 
-	private Media media;
-	private BienImmobilier bienImmobilier;
-	private Agence agence;
+	Media media;
+	BienImmobilier bienImmobilier;
+	Agence agence;
 	
 	public Annonce(Media media, Agence agence) {
 		this.media = media;
 		this.bienImmobilier = null;
-
-
-
 		this.agence = agence;
 
 		
@@ -28,7 +23,6 @@ public class Annonce {
 	 * 				Le bien immobilier à qui ajouter l'annonce.
 	 */
 	public void ajouterAnnonce(BienImmobilier bienImmo) {
-		this.bienImmobilier = bienImmo;
-		
+		this.bienImmobilier = bienImmo;	
 	}
 }
