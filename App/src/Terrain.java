@@ -1,8 +1,8 @@
 import java.util.Date;
 
 public class Terrain extends BienImmobilier {
-	private int surfaceSol;
-	private int longueurFacade;
+	 int surfaceSol;
+	 int longueurFacade;
 
 
 	public Terrain(String adresse, String orientation, int prix, Date dateVente, Date dateDeDisponibilite,

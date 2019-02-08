@@ -44,11 +44,42 @@ public class Agence {
 	/*
 	 * Permet de vérifier les voeux 
 	 */
-	public ArrayList checkVoeux(Personne P ){
-		if  (P.voeux.typeDeBien == ) {
-			if(P.voeux.prixSouhaitee <= BienImmobilier.prix )
+	public String checkVoeux(Personne P ){
+		String choix ="";
+		for (  BienImmobilier i : this.listeBienImmobilier) {
+			if  (P.voeux.typeDeBien == "TERRAIN" ) {
+				Terrain TER = (Terrain)i;
+					if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.longueurFacadeSouhaiteeTERR== TER.longueurFacade && P.voeux.surfaceSolSouhaitee == TER.surfaceSol) {
+						choix=("Ce terrain pourrait vous convenir: \n" +i +TER);
+					}
+					else {
+						choix=("Desole Pas de terrain correspandant a votre recherche ");
+					}
+			}
 			
+			if  (P.voeux.typeDeBien == "APPARTEMENT" ) {
+					Appartement APP = (Appartement)i;
+						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
+							choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
+				}
+						else {
+							choix=("Desole Pas d'appartement correspandant a votre recherche ");
+						}
+			}
+			if  (P.voeux.typeDeBien == "MAISON" ) {
+					Maison MAI = (Maison)i;
+						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== MAI.getNombrePiece() ) {
+								choix=("Cette maison pourrait vous convenir: \n" +i +MAI);
+				}
+						else {
+								choix=("Desole Pas de maison correspandant a votre recherche ");
+							}
+			}
 			
+		}
+		return choix;
+			
+		
 		}
 		
 

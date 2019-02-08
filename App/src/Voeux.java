@@ -5,15 +5,20 @@ public class Voeux {
 	 int surfaceSouhaitee;
 	 String localisationSouhaitee;
 	 int nbrPieceSouhaitee;
-	 BienImmobilier typeDeBien;
-	 
-	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, BienImmobilier typeDeBien ) {
+	 String typeDeBien;
+	 int surfaceSolSouhaitee;
+	 int longueurFacadeSouhaiteeTERR;
+	 int nombreDePieceAPP;
+	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien, int surfaceSolSouhaitee,int longueurFacadeSouhaiteeTERR,int nombreDePieceAPP ) {
 		
 		 this.prixSouhaitee = prixSouhaitee;
 		 this.surfaceSouhaitee = surfaceSouhaitee;
 		 this.localisationSouhaitee = localisationSouhaitee;
 		 this.nbrPieceSouhaitee=nbrPieceSouhaitee;
 		 this.typeDeBien=typeDeBien;
+		 this.surfaceSolSouhaitee=surfaceSolSouhaitee;
+		 this.longueurFacadeSouhaiteeTERR=longueurFacadeSouhaiteeTERR;
+		 this.nombreDePieceAPP=nombreDePieceAPP;
 		 
 		 
 	 }
@@ -24,7 +29,7 @@ public class Voeux {
 		 return this.localisationSouhaitee;
 	 }
 	
-	 public BienImmobilier gettypeDeBien () {
+	 public String gettypeDeBien () {
 		 return this.typeDeBien;
 	 }
 	 public int prixSouhaitee() {
@@ -34,7 +39,7 @@ public class Voeux {
 		 return this.nbrPieceSouhaitee;
 	 }
 	 public int surfaceSouhaitee () {
-		 return this.typeDeBien;
+		 return this.surfaceSouhaitee;
 	 }
 	 
 	
