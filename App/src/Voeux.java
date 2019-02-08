@@ -1,28 +1,54 @@
-/*
- * @author Kamal Aarab and Massi Ouldrabah
- */
+
 
 public class Voeux {
-
-	int prixSouhaite;
-	int surfaceSouhaitee;
-	String localisationSouhaitee;
-	int nbPieceSouhaitee;
-	String typeDeBien;
-
-	public Voeux( int prixSouhaite , int surfaceSouhaitee, String localisationSouhaitee, int nbPieceSouhaitee, String typeDeBien) {
-		this.prixSouhaite = prixSouhaite;
-		this.surfaceSouhaitee = surfaceSouhaitee;
-		this.typeDeBien = typeDeBien;
-		this.localisationSouhaitee = localisationSouhaitee;
-
-		if(typeDeBien == "terrain") {
-			this.nbPieceSouhaitee = 0;
-		} else { 		
-			this.nbPieceSouhaitee = nbPieceSouhaitee;
-		}
-
-
-	}
-
+	 
+	 int prixSouhaitee;
+	 int surfaceSouhaitee;
+	 String localisationSouhaitee;
+	 int nbrPieceSouhaitee;
+	 String typeDeBien;
+	 int surfaceSolSouhaitee;
+	 int longueurFacadeSouhaiteeTERR;
+	 int nombreDePieceAPP;
+	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien, int surfaceSolSouhaitee,int longueurFacadeSouhaiteeTERR,int nombreDePieceAPP ) {
+		
+		 this.prixSouhaitee = prixSouhaitee;
+		 this.surfaceSouhaitee = surfaceSouhaitee;
+		 this.localisationSouhaitee = localisationSouhaitee;
+		 this.nbrPieceSouhaitee=nbrPieceSouhaitee;
+		 this.typeDeBien=typeDeBien;
+		 this.surfaceSolSouhaitee=surfaceSolSouhaitee;
+		 this.longueurFacadeSouhaiteeTERR=longueurFacadeSouhaiteeTERR;
+		 this.nombreDePieceAPP=nombreDePieceAPP;
+		 
+		 
+	 }
+	
+	 
+	
+	 public String getlocalisationSouhaitee () {
+		 return this.localisationSouhaitee;
+	 }
+	
+	 public String gettypeDeBien () {
+		 return this.typeDeBien;
+	 }
+	 public int prixSouhaitee() {
+		 return this.prixSouhaitee;
+	 }
+	 public int nbrPieceSouhaitee() {
+		 return this.nbrPieceSouhaitee;
+	 }
+	 public int surfaceSouhaitee () {
+		 return this.surfaceSouhaitee;
+	 }
+	 
+	
+	
+	
+	
+	
+	
+	
 }
+

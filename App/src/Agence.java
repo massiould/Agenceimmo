@@ -1,3 +1,4 @@
+
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
@@ -36,7 +37,7 @@ public class Agence {
 		
 		switch (typeDeBien) {
 			case "terrain":
-				System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente");
+				System.out.println("Saisir les informations suivante pour l'ajout d'un terrain ï¿½ la vente");
 				System.out.println("");
 				System.out.println("Donner la surface au sol :");
 				int surfaceSol = clavier.nextInt();
@@ -48,7 +49,7 @@ public class Agence {
 				break;
 				
 			case "appartement":
-				System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison à la vente");
+				System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison ï¿½ la vente");
 				System.out.println("");
 				System.out.println("Donner la surface habitable :");
 				int surfaceHabitable = clavier.nextInt();
@@ -64,7 +65,7 @@ public class Agence {
 				break;
 				
 			case "maison":
-				System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement à la vente");
+				System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement ï¿½ la vente");
 				System.out.println("");
 				System.out.println("Donner le nombre de pieces :");
 				int nombreDePiece1 = clavier.nextInt();
@@ -77,7 +78,7 @@ public class Agence {
 				this.listeClient.add(vendeur);
 		}
 		/*if(typeDeBien == "terrain") {
-			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain à la vente");
+			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain ï¿½ la vente");
 			System.out.println("");
 			System.out.println("Donner la surface au sol :");
 			int surfaceSol = clavier.nextInt();
@@ -88,7 +89,7 @@ public class Agence {
 			this.listeClient.add(vendeur);
 
 		} else if (typeDeBien == "maison") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison à la vente");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison ï¿½ la vente");
 			System.out.println("");
 			System.out.println("Donner la surface habitable :");
 			int surfaceHabitable = clavier.nextInt();
@@ -103,7 +104,7 @@ public class Agence {
 			this.listeClient.add(vendeur);
 
 		} else if (typeDeBien == "appartement") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement à la vente");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement ï¿½ la vente");
 			System.out.println("");
 			System.out.println("Donner le nombre de pieces :");
 			int nombreDePiece = clavier.nextInt();
@@ -120,16 +121,16 @@ public class Agence {
 	}
 
 	/**
-	 * Permet d'ajouter un client à l'agence pour pouvoir lui proposer des services par la suite
+	 * Permet d'ajouter un client ï¿½ l'agence pour pouvoir lui proposer des services par la suite
 	 * 
 	 * @param personne
 	 */
 	void inscrireClient(Personne personne) {
 		if(this.listeClient.contains(personne)) {
-			System.out.println("Client déjà inscrit dans l'agence.");
+			System.out.println("Client dï¿½jï¿½ inscrit dans l'agence.");
 		} else {
 			this.listeClient.add(personne);
-			System.out.println("Le clien a été inscrit à l'agence.");
+			System.out.println("Le clien a ï¿½tï¿½ inscrit ï¿½ l'agence.");
 		}
 	}
 
@@ -184,11 +185,48 @@ public class Agence {
 		
 		agence.inscrireBienImmo(p1, "Toulouse Nord", "sud", 3000000, "2019-02-2", "maison");
 		
-		agence.inscrireClient(p1); // renvoie : client déjà inscrit	
+		agence.inscrireClient(p1); // renvoie : client dï¿½jï¿½ inscrit	
 		agence.inscrireClient(p2); // renvoie : client inscrit	
 		System.out.println(agence.getBienImmobilier());
 		p1.setVoeux();
 		//p1.checkVoeux()
 	}
+  public String checkVoeux(Personne P ){
+		String choix ="";
+		for (  BienImmobilier i : this.listeBienImmobilier) {
+			if  (P.voeux.typeDeBien == "TERRAIN" ) {
+				Terrain TER = (Terrain)i;
+					if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.longueurFacadeSouhaiteeTERR== TER.longueurFacade && P.voeux.surfaceSolSouhaitee == TER.surfaceSol) {
+						choix=("Ce terrain pourrait vous convenir: \n" +i +TER);
+					}
+					else {
+						choix=("Desole Pas de terrain correspandant a votre recherche ");
+					}
+			}
+			
+			if  (P.voeux.typeDeBien == "APPARTEMENT" ) {
+					Appartement APP = (Appartement)i;
+						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
+							choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
+				}
+						else {
+							choix=("Desole Pas d'appartement correspandant a votre recherche ");
+						}
+			}
+			if  (P.voeux.typeDeBien == "MAISON" ) {
+					Maison MAI = (Maison)i;
+						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== MAI.getNombrePiece() ) {
+								choix=("Cette maison pourrait vous convenir: \n" +i +MAI);
+				}
+						else {
+								choix=("Desole Pas de maison correspandant a votre recherche ");
+							}
+			}
+			
+		}
+		return choix;
+			
+		
+		}
 
 }

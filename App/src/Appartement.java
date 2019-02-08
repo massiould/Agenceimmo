@@ -11,6 +11,7 @@ public class Appartement extends BienImmobilier {
 	int chargesMensuelles;
 
 
+
 	public Appartement(String adresse, String orientation, int prix, String dateDeDisponibilite, Personne vendeur, int nombreDePiece, int numeroEtage, int chargesMensuelles) {
 		super(adresse, orientation, prix, dateDeDisponibilite, vendeur);
 		this.setChargesMensuelles(chargesMensuelles);

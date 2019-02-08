@@ -1,3 +1,4 @@
+
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
@@ -8,7 +9,7 @@ public class BienImmobilier {
 	String adresse ;
 	String orientation;
 	int prix;
-	//Date en string car par encore géré
+	//Date en string car par encore gï¿½rï¿½
 	String dateVente;
 	String dateDeDisponibilite;
 	int numeroBienImmobilier = 0;
@@ -83,7 +84,7 @@ public class BienImmobilier {
 	}
 	
 	public String toString() {
-		return "Bien immobilier numéro "+ this.numeroBienImmobilier+"vendu par "+this.vendeur;
+		return "Bien immobilier numï¿½ro "+ this.numeroBienImmobilier+"vendu par "+this.vendeur;
 	}
 }
 
