@@ -52,42 +52,44 @@ public class Personne {
 	public void setVoeux() {
 		Scanner cl = new Scanner(System.in);
 		System.out.println();
-		System.out.println("**************************************************************");
+		//System.out.println("**************************************************************");
 		System.out.println("Quel type de bien cherchez-vous ?");
-		String typeDeBien = cl.nextLine();
+		String typeDeBien = cl.next();
 		while(!typeDeBien.equals("terrain") && !typeDeBien.equals("appartement") && !typeDeBien.equals("maison")) {
-			System.out.println("Ressaisir :");
+			System.out.println("Ressaisir (terrain, appartement ou maison) :");
 			System.out.println(typeDeBien);
-			typeDeBien = cl.nextLine();		
+			typeDeBien = cl.next();		
 		}
-		
-		if (typeDeBien == "terrain") {
-			System.out.println(">>> Saisir les informations pour un voeux");
-			System.out.println("");
-			System.out.println("Saisir le prix :");
-			int prixSouhaite = cl.nextInt();
-			System.out.println("Saisir la surface (m2) :");
-			int surfaceSouhaitee = cl.nextInt();
-			System.out.println("Saisir la localisation :");
-			String localisationSouhaitee = cl.next();
-			voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, 0, typeDeBien);
-			
-		} else if(typeDeBien == "maison" || typeDeBien == "appartement") {
-			System.out.println(">>> Saisir les informations pour un voeux");
-			System.out.println("");
-			System.out.println("Saisir le prix :");
-			int prixSouhaite = cl.nextInt();
-			System.out.println("Saisir la surface (m2) :");
-			int surfaceSouhaitee = cl.nextInt();
-			System.out.println("Saisir le nombre de piece (si terrain ne rien saisir et taper sur entrer) :");
-			int nbPieceSouhaitee = cl.nextInt();
-			System.out.println("Saisir la localisation :");
-			String localisationSouhaitee = cl.next();
-			voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, nbPieceSouhaitee, typeDeBien);
+		try {
+			if (typeDeBien.equals("terrain")) {
+				System.out.println(">>> Saisir les informations pour un voeux");
+				System.out.println("");
+				System.out.println("Saisir le prix :");
+				int prixSouhaite = cl.nextInt();
+				System.out.println("Saisir la surface (m2) :");
+				int surfaceSouhaitee = cl.nextInt();
+				System.out.println("Saisir la localisation :");
+				String localisationSouhaitee = cl.next();
+				voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, 0, typeDeBien, surfaceSouhaitee, surfaceSouhaitee, surfaceSouhaitee);
+
+			} else if(typeDeBien.equals("maison") || typeDeBien.equals("appartement")) {
+				System.out.println(">>> Saisir les informations pour un voeux");
+				System.out.println("");
+				System.out.println("Saisir le prix :");
+				int prixSouhaite = cl.nextInt();
+				System.out.println("Saisir la surface (m2) :");
+				int surfaceSouhaitee = cl.nextInt();
+				System.out.println("Saisir le nombre de piece (si terrain ne rien saisir et taper sur entrer) :");
+				int nbPieceSouhaitee = cl.nextInt();
+				System.out.println("Saisir la localisation :");
+				String localisationSouhaitee = cl.next();
+				voeux = new Voeux(prixSouhaite, surfaceSouhaitee, localisationSouhaitee, nbPieceSouhaitee, typeDeBien, nbPieceSouhaitee, nbPieceSouhaitee, nbPieceSouhaitee);
+			}
+			this.voeux = voeux;
+			System.out.println("Le voeux a été changé !");
+		} catch (Exception e) {
+			System.out.println("Erreur de saisie");
 		}
-		this.voeux = voeux;
-		System.out.println("Le voeux a été changé !");
-		//cl.close();
 	}
 
 	/**
@@ -114,6 +116,14 @@ public class Personne {
 	 */
 	public String getNumeroDeTelephone(){
 		return this.numeroDeTelephone;
+	}
+
+	/**
+	 * Retourne la représentation d'une personne
+	 * @return personne
+	 */
+	public String toString() {
+		return this.getNom() + " Tel :"+ this.getNumeroDeTelephone();
 	}
 }
 
