@@ -6,7 +6,7 @@ public class Maison extends BienImmobilier{
 		private int nombreEtage;
 		private String moyenDeChauffage;
 		
-	public Maison(String adresse, String orientation, int prix, Date dateVente, Date dateDeDisponibilite,
+	public Maison(String adresse, String orientation, int prix, String dateVente, String dateDeDisponibilite,
 			int numeroBienImmobilier, String moyenDeChauffage, int nombreEtage, int nombrePiece) {
 		super(adresse, orientation, prix, dateVente, dateDeDisponibilite, numeroBienImmobilier, getVendeur());
 		this.setMoyenDeChauffage(moyenDeChauffage);

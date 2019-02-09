@@ -28,7 +28,11 @@ public class Agence {
 	 * 
 	 */
 
-	void inscrireBienImmo(Personne personne, String adresse , String orientation , int prix , Date dateVente ,Date dateDeDisponibilite ,int numeroBienImmobilier) {
+	public Agence(Object listeRDV2, Object listeAnnonce2, Object listeBienImmobilier2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	void inscrireBienImmo(Personne personne, String adresse , String orientation , int prix , String dateVente ,String dateDeDisponibilite ,int numeroBienImmobilier) {
 		BienImmobilier bienImmo = new BienImmobilier(adresse, orientation, prix, dateVente, dateDeDisponibilite, numeroBienImmobilier, personne);
 		this.listeBienImmobilier.add(bienImmo);
 	}
@@ -47,17 +51,17 @@ public class Agence {
 	public String checkVoeux(Personne P ){
 		String choix ="";
 		for (  BienImmobilier i : this.listeBienImmobilier) {
-			if  (P.voeux.typeDeBien == "TERRAIN" ) {
+			if  (P.voeux.typeDeBien.equals("TERRAIN") ) {
 				Terrain TER = (Terrain)i;
 					if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.longueurFacadeSouhaiteeTERR== TER.longueurFacade && P.voeux.surfaceSolSouhaitee == TER.surfaceSol) {
-						choix=("Ce terrain pourrait vous convenir: \n" +i +TER);
+						choix=("Ce terrain pourrait vous convenir: \n"+i +TER);
 					}
 					else {
 						choix=("Desole Pas de terrain correspandant a votre recherche ");
 					}
 			}
 			
-			if  (P.voeux.typeDeBien == "APPARTEMENT" ) {
+			if  (P.voeux.typeDeBien.equals("APPARTEMENT")) {
 					Appartement APP = (Appartement)i;
 						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
 							choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
@@ -66,7 +70,7 @@ public class Agence {
 							choix=("Desole Pas d'appartement correspandant a votre recherche ");
 						}
 			}
-			if  (P.voeux.typeDeBien == "MAISON" ) {
+			if  (P.voeux.typeDeBien.equals("MAISON")) {
 					Maison MAI = (Maison)i;
 						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== MAI.getNombrePiece() ) {
 								choix=("Cette maison pourrait vous convenir: \n" +i +MAI);
@@ -113,11 +117,40 @@ public class Agence {
 	public List<BienImmobilier> getBienImmobilier(){
 		return this.listeBienImmobilier;
 	}
+	
 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	 }
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Agence other = (Agence) obj;
+		if (listeAnnonce == null) {
+			if (other.listeAnnonce != null)
+				return false;
+		} else if (!listeAnnonce.equals(other.listeAnnonce))
+			return false;
+		if (listeBienImmobilier == null) {
+			if (other.listeBienImmobilier != null)
+				return false;
+		} else if (!listeBienImmobilier.equals(other.listeBienImmobilier))
+			return false;
+		if (listeRDV == null) {
+			if (other.listeRDV!= null)
+				return false;
+		} else if (!listeRDV.equals(other.listeRDV))
+			return false;
+		
+		return true;
 	}
 
 }
