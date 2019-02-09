@@ -9,10 +9,8 @@ public class BienImmobilier {
 	String adresse ;
 	String orientation;
 	int prix;
-	//Date en string car par encore g�r�
 	String dateVente;
 	String dateDeDisponibilite;
-	int numeroBienImmobilier = 0;
 	Personne vendeur;
 	Personne acheteur;
 
@@ -22,7 +20,6 @@ public class BienImmobilier {
 		this.prix = prix ;
 		this.dateVente = null;
 		this.dateDeDisponibilite = dateDeDisponibilite;
-		this.numeroBienImmobilier = numeroBienImmobilier +1;
 		this.vendeur = vendeur;
 		this.acheteur = null;
 	}
@@ -72,9 +69,9 @@ public class BienImmobilier {
 	 * 
 	 * @return numeroBienImmobilier of BienImmobilier
 	 */
-	public int getnumeroBienImmobilier(){
-		return this.numeroBienImmobilier;
-	}
+	//public int getnumeroBienImmobilier(){
+	//	return this.numeroBienImmobilier;
+	//}
 
 	/**
 	 * @return the vendeur of BienImmobilier
@@ -84,7 +81,7 @@ public class BienImmobilier {
 	}
 	
 	public String toString() {
-		return "Bien immobilier num�ro "+ this.numeroBienImmobilier+"vendu par "+this.vendeur;
+		return "Vendu par "+this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
 	}
 }
 

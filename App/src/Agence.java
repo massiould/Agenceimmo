@@ -4,6 +4,7 @@
  */
 
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +16,7 @@ public class Agence {
 	List<Annonce> listeAnnonce;
 	List<BienImmobilier> listeBienImmobilier;
 	List<Personne> listeClient;
+	List<BienImmobilier> listeBienImmobilierVendu;
 
 
 	public Agence(String nomAgence) {
@@ -23,6 +25,7 @@ public class Agence {
 		this.listeAnnonce = new ArrayList<Annonce>();
 		this.listeBienImmobilier = new ArrayList<BienImmobilier>();
 		this.listeClient = new ArrayList<Personne>();
+		this.listeBienImmobilierVendu = new ArrayList<BienImmobilier>();
 	}
 
 	/**
@@ -34,51 +37,10 @@ public class Agence {
 	void inscrireBienImmo(Personne vendeur, String adresse, String orientation, int prix, String dateDeDisponibilite, String typeDeBien) {
 		Scanner clavier = new Scanner(System.in);
 		System.out.println("**************************************************************");
-		
+		try {
 		switch (typeDeBien) {
-			case "terrain":
-				System.out.println("Saisir les informations suivante pour l'ajout d'un terrain ï¿½ la vente");
-				System.out.println("");
-				System.out.println("Donner la surface au sol :");
-				int surfaceSol = clavier.nextInt();
-				System.out.println("Donner la longueur de la facade :");
-				int longueurFacade = clavier.nextInt();
-				BienImmobilier bienImmo = new Terrain(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceSol, longueurFacade);
-				this.listeBienImmobilier.add(bienImmo);
-				this.listeClient.add(vendeur);
-				break;
-				
-			case "appartement":
-				System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison ï¿½ la vente");
-				System.out.println("");
-				System.out.println("Donner la surface habitable :");
-				int surfaceHabitable = clavier.nextInt();
-				System.out.println("Donner le nombre de pieces :");
-				int nombreDePiece = clavier.nextInt();
-				System.out.println("Donner le nombre d'etages :");
-				int nombreEtage = clavier.nextInt();
-				System.out.println("Donner le moyen de chauffage :");
-				String moyenDeChauffage = clavier.next();
-				BienImmobilier bienImmo1 = new Maison(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceHabitable, nombreDePiece, nombreEtage, moyenDeChauffage);
-				this.listeBienImmobilier.add(bienImmo1);
-				this.listeClient.add(vendeur);
-				break;
-				
-			case "maison":
-				System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement ï¿½ la vente");
-				System.out.println("");
-				System.out.println("Donner le nombre de pieces :");
-				int nombreDePiece1 = clavier.nextInt();
-				System.out.println("Donner le numero de l'etage ou se situe l'appartement :");
-				int numeroEtage = clavier.nextInt();
-				System.out.println("Donner les charges mensuelles :");
-				int chargesMensuelles = clavier.nextInt();
-				BienImmobilier bienImmo2 = new Appartement(adresse, orientation, prix, dateDeDisponibilite, vendeur, nombreDePiece1, numeroEtage, chargesMensuelles);
-				this.listeBienImmobilier.add(bienImmo2);
-				this.listeClient.add(vendeur);
-		}
-		/*if(typeDeBien == "terrain") {
-			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain ï¿½ la vente");
+		case "terrain":
+			System.out.println("Saisir les informations suivante pour l'ajout d'un terrain a la vente");
 			System.out.println("");
 			System.out.println("Donner la surface au sol :");
 			int surfaceSol = clavier.nextInt();
@@ -87,9 +49,10 @@ public class Agence {
 			BienImmobilier bienImmo = new Terrain(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceSol, longueurFacade);
 			this.listeBienImmobilier.add(bienImmo);
 			this.listeClient.add(vendeur);
+			break;
 
-		} else if (typeDeBien == "maison") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison ï¿½ la vente");
+		case "appartement":
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison a la vente");
 			System.out.println("");
 			System.out.println("Donner la surface habitable :");
 			int surfaceHabitable = clavier.nextInt();
@@ -99,55 +62,122 @@ public class Agence {
 			int nombreEtage = clavier.nextInt();
 			System.out.println("Donner le moyen de chauffage :");
 			String moyenDeChauffage = clavier.next();
-			BienImmobilier bienImmo = new Maison(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceHabitable, nombreDePiece, nombreEtage, moyenDeChauffage);
-			this.listeBienImmobilier.add(bienImmo);
+			BienImmobilier bienImmo1 = new Maison(adresse, orientation, prix, dateDeDisponibilite, vendeur, surfaceHabitable, nombreDePiece, nombreEtage, moyenDeChauffage);
+			this.listeBienImmobilier.add(bienImmo1);
 			this.listeClient.add(vendeur);
+			break;
 
-		} else if (typeDeBien == "appartement") {
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement ï¿½ la vente");
+		case "maison":
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement a la vente");
 			System.out.println("");
 			System.out.println("Donner le nombre de pieces :");
-			int nombreDePiece = clavier.nextInt();
+			int nombreDePiece1 = clavier.nextInt();
 			System.out.println("Donner le numero de l'etage ou se situe l'appartement :");
 			int numeroEtage = clavier.nextInt();
 			System.out.println("Donner les charges mensuelles :");
 			int chargesMensuelles = clavier.nextInt();
-			BienImmobilier bienImmo = new Appartement(adresse, orientation, prix, dateDeDisponibilite, vendeur, nombreDePiece, numeroEtage, chargesMensuelles);
-			this.listeBienImmobilier.add(bienImmo);
+			BienImmobilier bienImmo2 = new Appartement(adresse, orientation, prix, dateDeDisponibilite, vendeur, nombreDePiece1, numeroEtage, chargesMensuelles);
+			this.listeBienImmobilier.add(bienImmo2);
 			this.listeClient.add(vendeur);
-		}*/
-		//clavier.close();
-
+		}
+		} catch(Exception e) {
+			System.out.println("Erreur de saisie");
+		}
 	}
-
+	
 	/**
-	 * Permet d'ajouter un client ï¿½ l'agence pour pouvoir lui proposer des services par la suite
+	 * Permet de retirer un bien immobilier à la vente
+	 * @param bienImmobilier
+	 */
+	void retirerBienImmobilier(int numero) {
+		this.listeBienImmobilier.remove(numero);
+		System.out.println("Le bien immobilier numero "+numero+" a ete supprime.");
+	}
+	
+	/**
+	 * Permet de vendre un bien immobilier
+	 * @param bienImmobilier, acheteur
+	 */
+	void vendreBienImmobilier(int numBienImmo, int numAcheteur, String dateRDV) {
+		BienImmobilier bienImmobilier = this.listeBienImmobilier.get(numBienImmo);
+		Personne acheteur = this.listeClient.get(numAcheteur);
+		this.listeBienImmobilierVendu.add(bienImmobilier);
+		this.listeBienImmobilier.remove(bienImmobilier);
+		RDV rdvVente = new RDV(dateRDV, "RDV Vente", bienImmobilier.vendeur, acheteur);
+		
+	}
+	/**
+	 * Permet d'ajouter un client a l'agence pour pouvoir lui proposer des services par la suite
 	 * 
 	 * @param personne
 	 */
 	void inscrireClient(Personne personne) {
 		if(this.listeClient.contains(personne)) {
-			System.out.println("Client dï¿½jï¿½ inscrit dans l'agence.");
+			System.out.println("Client deja inscrit dans l'agence.");
 		} else {
 			this.listeClient.add(personne);
-			System.out.println("Le clien a ï¿½tï¿½ inscrit ï¿½ l'agence.");
+			System.out.println("Le client a ete inscrit dans l'agence.");
 		}
 	}
 
 	/**
 	 * Permet de contacter un acheteur qui a un bien immobilier conforme a son voeux 
 	 * 
-	 * @param personne
+	 * @param Personne
 	 * 				Elle prend en parametre la personne a contacter.
 	 */
+	public String checkVoeux(Personne P){
+		String choix ="patate";
+		for (  BienImmobilier i : this.listeBienImmobilier) {
+			if  (P.voeux.typeDeBien == "terrain" && (i instanceof Terrain)) {
+				Terrain TER = (Terrain)i;
+				if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.longueurFacadeSouhaiteeTERR== TER.longueurFacade && P.voeux.surfaceSolSouhaitee == TER.surfaceSol) {
+					choix=("Ce terrain pourrait vous convenir: \n" +i +TER);
+				}
+				/**else {
+					choix=("Desole Pas de terrain correspandant a votre recherche ");
+				}*/
+			}
+
+			else if  (P.voeux.typeDeBien == "appartement" && (i instanceof Appartement) ) {
+				Appartement APP = (Appartement)i;
+				if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
+					choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
+				}
+				/**else {
+					choix=("Desole Pas d'appartement correspandant a votre recherche ");
+				}*/
+			}
+			else if  (P.voeux.typeDeBien == "maison" && (i instanceof Maison) ) {
+				Maison MAI = (Maison)i;
+				if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== MAI.getNombrePiece() ) {
+					choix=("Cette maison pourrait vous convenir: \n" +i +MAI);
+				}
+				else {
+					choix=("Desole Pas de maison correspandant a votre recherche ");
+				}
+			}
+		}
+		return choix;
+	}
 
 	/**
 	 * Permet de retirer une annonce de l'agence.
-	 * @param Annonce
+	 * @param annonce
 	 * 				L'annonce a retirer.
 	 */
 	void retirerAnnonce(Annonce annonce) {
 		this.listeAnnonce.remove(annonce);
+	}
+	
+	/**
+	 * Permet d'organiser un rendez-vous
+	 * @param bienImmobilier, personne
+	 */
+	void organiserRDV(BienImmobilier bienImmobilier, Personne personne, String dateRDV, String typeRDV) {
+		Personne vendeur = bienImmobilier.vendeur;
+		RDV rdv = new RDV(dateRDV, typeRDV, vendeur, personne);
+		this.listeRDV.add(rdv);	
 	}
 
 	/**
@@ -167,66 +197,50 @@ public class Agence {
 	List<Annonce> getAnnonce(){
 		return this.listeAnnonce;
 	}
-
+	
 	/**
-	 * Permet de recuperer la liste des bien immobilier d'une agence immobiliere
+	 * Permet de recuperer la liste des annonces d'une agence
 	 * 
-	 * @return listeBienImmobilier of Agence
+	 * @return listeAnnonce of Agence
 	 */
 	List<BienImmobilier> getBienImmobilier(){
 		return this.listeBienImmobilier;
 	}
-
-
-	public static void main(String[] args) {
-		Agence agence = new Agence("Agence Toulouse Mirail");
-		Personne p1 = new Personne("Kamal", "6 rue des roses", "kamal@etu.fr", "0629564521");
-		Personne p2 = new Personne("Massi", "5 rue des roses", "massi@etu.fr", "1546464656");
-		
-		agence.inscrireBienImmo(p1, "Toulouse Nord", "sud", 3000000, "2019-02-2", "maison");
-		
-		agence.inscrireClient(p1); // renvoie : client dï¿½jï¿½ inscrit	
-		agence.inscrireClient(p2); // renvoie : client inscrit	
-		System.out.println(agence.getBienImmobilier());
-		p1.setVoeux();
-		//p1.checkVoeux()
+	
+	/**
+	 * Permet de recuperer le nom de l'agence
+	 * 
+	 * @return nomAgence de Agence
+	 */
+	String getNomAgence() {
+		return this.nomAgence;
 	}
-  public String checkVoeux(Personne P ){
-		String choix ="";
-		for (  BienImmobilier i : this.listeBienImmobilier) {
-			if  (P.voeux.typeDeBien == "TERRAIN" ) {
-				Terrain TER = (Terrain)i;
-					if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.longueurFacadeSouhaiteeTERR== TER.longueurFacade && P.voeux.surfaceSolSouhaitee == TER.surfaceSol) {
-						choix=("Ce terrain pourrait vous convenir: \n" +i +TER);
-					}
-					else {
-						choix=("Desole Pas de terrain correspandant a votre recherche ");
-					}
-			}
-			
-			if  (P.voeux.typeDeBien == "APPARTEMENT" ) {
-					Appartement APP = (Appartement)i;
-						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
-							choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
-				}
-						else {
-							choix=("Desole Pas d'appartement correspandant a votre recherche ");
-						}
-			}
-			if  (P.voeux.typeDeBien == "MAISON" ) {
-					Maison MAI = (Maison)i;
-						if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== MAI.getNombrePiece() ) {
-								choix=("Cette maison pourrait vous convenir: \n" +i +MAI);
-				}
-						else {
-								choix=("Desole Pas de maison correspandant a votre recherche ");
-							}
-			}
-			
-		}
-		return choix;
-			
-		
-		}
 
+	/**
+	 * Permet de recuperer la liste des bien immobilier d'une agence immobiliere (format string)
+	 * 
+	 * @return rep
+	 * 			Liste des biens immobilier de Agence
+	 */
+	String getBienImmobilierString(){
+		String rep = "";
+		for (int i = 0; i < this.listeBienImmobilier.size() - 1; i ++) {
+			rep = "Index : "+ i + this.listeBienImmobilier.get(i).toString();
+		}
+		return rep;
+	}
+	
+	/**
+	 * Permet de recuperer la liste des clients d'une agence immobiliere (format string)
+	 * 
+	 * @return rep
+	 * 			Liste des clients de Agence
+	 */
+	String getClients() {
+		String rep = "";
+		for (int i = 0; i < this.listeClient.size() -1; i++) {
+			rep = "Index : "+i+this.listeClient.get(i).toString();
+		}
+		return rep;
+	}
 }

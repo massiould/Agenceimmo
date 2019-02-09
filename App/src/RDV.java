@@ -2,12 +2,16 @@
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-import java.util.Date;
-
 public class RDV {
-	Date dateRDV;
+	String dateRDV;
+	String typeRDV;
+	Personne vendeur;
+	Personne acheteur;
 
-	public RDV(Date dateRDV) {
+	public RDV(String dateRDV, String typeRDV, Personne vendeur, Personne acheteur) {
 		this.dateRDV = dateRDV;
+		this.typeRDV = typeRDV;
+		this.vendeur = vendeur;
+		this.acheteur = acheteur;
 	}
 }
