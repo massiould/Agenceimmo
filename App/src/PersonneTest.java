@@ -1,3 +1,6 @@
+/*
+ * @author Kamal Aarab and Massi Ouldrabah
+ */
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -9,26 +12,36 @@ public class PersonneTest {
 	Personne acheteur;
 	Voeux voeux;
 	
+	/**
+	 * teste de ma classe Personne
+	 */
+
+
+	
+	
+	
 	
 
 	@Before
 	public void setUp() throws Exception {
+		vendeur = new Personne( "nom",  "adressePersonne",  "mail",  "numeroDeTelephone");
+		acheteur = new Personne("nom",  "adressePersonne",  "mail",  "numeroDeTelephone",voeux);
+		voeux = new Voeux( 50000 , "toulouse", 25, "Appartement",6);
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testPersonne() {
-		fail("Not yet implemented");
-	}
 
-	
+	/**
+	 * test de la methode toString
+	 */
+
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals("nom Tel : numeroDeTelephone",vendeur.toString());
 	}
 
 	

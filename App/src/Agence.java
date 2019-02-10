@@ -235,11 +235,12 @@ public class Agence {
 	 * 			Liste des clients de Agence
 	 */
 	String getClients() {
-		String rep = "[";
+		String rep = "";
 		for (int i = 0; i < this.listeClient.size(); i++) {
 			rep = "Index : "+i+ " " + this.listeClient.get(i).toString();
 		}
-		return rep += "]";
+		return rep ;
 	}
+	
 }
->>>>>>> cd725fcdb6c689e9a31f8466848ed192336d2086
+

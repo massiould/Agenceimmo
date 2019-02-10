@@ -1,3 +1,6 @@
+/*
+ * @author Kamal Aarab and Massi Ouldrabah
+ */
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -20,6 +23,11 @@ public class AgenceTest {
 	Media Html;
 	Media Video;
 	Media Texte;
+	
+	
+	/**
+	 * teste de ma classe Agence
+	 */
 
 	@Before
 	
@@ -35,33 +43,63 @@ public class AgenceTest {
 		terrain = new Terrain("toulouse", "sud", 500000, "01/01/2000", vendeur,50,50);
 		appart = new Appartement("toulouse", "sud", 500000, "01/01/2000", vendeur,5,3,140);
 		maison = new Maison("toulouse", "sud", 500000, "01/01/2000",vendeur,200, 7,5,"chauffage");
-		voeux = new Voeux(500000,50,"toulouse",5,"terrain",50,40,40);
+		voeux = new Voeux(50000,"toulouse","terrain",200,2);
 		
 		
-	
+	 
 	}
 
 	 
 
+	
+	/**
+	 * teste la methode InscrireBienImmo
+	 * verifie le bien est bien enregistrer 
+	 * 
+	 */
 	@Test
 	public void testInscrireBienImmo() {
-		agence.inscrireBienImmo( vendeur ,"toulouse", "nord", 3000,"01/01/2019", "terrain");
+		agence.inscrireBienImmo(vendeur ,"toulouse", "nord", 3000,"01/01/2019", "terrain");
 		assertEquals(agence.getBienImmobilier(),bien);
+	}
+	
+
+	
+	/**
+	 * teste la methode InscrireClient
+	 * verifie si le Client est bien enregister
+	 * 
+	 */
+	
+	@Test
+	public void testInscrireClient() {
+		agence.inscrireClient(acheteur);
+		assertEquals(agence.getClients(),"Index : 0 kamal Tel : 06060606");
 	}
 	
 	
 	
+	
+	/**
+	 * teste la methode CheckVoeux
+	 * verifie que le voeux est bien pris en compte
+	 * 
+	 */
 	
 	@Test
 	public void testCheckVoeux() {
 		agence.inscrireBienImmo(  vendeur ,"toulouse", "nord", 3000,"01/01/2019", "terrain");
 		assertEquals(bien, agence.checkVoeux(acheteur));
 	}
+	
+	
+	
+	
+	
 
-	@Test
-	public void testRetirerAnnonce() {
-		fail("Not yet implemented");
-	}
+	
+	
+	
 
 
 	}
