@@ -24,37 +24,37 @@ public class AgenceTest {
 	@Before
 	
 	public void setup() {
-		agence = new Agence(null, null, null);
-		bien = new BienImmobilier( "toulouse", "sud", 500000, "01/01/2000","01/01/2000",1, vendeur);
+		agence = new Agence("corpo");
+		bien = new BienImmobilier( "toulouse", "sud", 500000, "01/01/2000", vendeur);
 		annonce = new Annonce( Html, agence);
-		/*
-		 * vendeur =  new Personne("vendeur", "2 rue op", 0606060606, "mail", voeux);
-			acheteur = new Personne("acheteur", "adr", "0000", "mail", "type");
-		*/
-		rdv = new RDV(agence);
-		terrain = new Terrain("toulouse", "sud", 500000, "01/01/2000","01/01/2000",1, vendeur,50,50);
-		appart = new Appartement("toulouse", "sud", 500000, "01/01/2000","01/01/2000",1, vendeur,5,3,140);
-		maison = new Maison("toulouse", "sud", 500000, "01/01/2000","01/01/2000",1, "radiateur",5,3);
-		voeux = new Voeux(500000,50,"toulouse",5,"TERRAIN",50,40,40);
+		
+		vendeur =  new Personne("massi", "2 rue op", "mail", "06060606",voeux);
+		acheteur = new Personne("kamal", "opo3100",  "mail", "06060606");
+		
+		/*rdv = new RDV(agence);*/
+		terrain = new Terrain("toulouse", "sud", 500000, "01/01/2000", vendeur,50,50);
+		appart = new Appartement("toulouse", "sud", 500000, "01/01/2000", vendeur,5,3,140);
+		maison = new Maison("toulouse", "sud", 500000, "01/01/2000",vendeur,200, 7,5,"chauffage");
+		voeux = new Voeux(500000,50,"toulouse",5,"terrain",50,40,40);
 		
 		
 	
 	}
 
-	@Test
-	public void testAgence() {
-		fail("Not yet implemented");
-	}
+	 
 
 	@Test
 	public void testInscrireBienImmo() {
-		agence.inscrireBienImmo( vendeur ,"toulouse", "nord", 3000,"01/01/2019", "01/01/2019", 2);
+		agence.inscrireBienImmo( vendeur ,"toulouse", "nord", 3000,"01/01/2019", "terrain");
 		assertEquals(agence.getBienImmobilier(),bien);
 	}
-
+	
+	
+	
+	
 	@Test
 	public void testCheckVoeux() {
-		agence.inscrireBienImmo( vendeur ,"toulouse", "nord", 3000,"01/01/2019", "01/01/2019", 2);
+		agence.inscrireBienImmo(  vendeur ,"toulouse", "nord", 3000,"01/01/2019", "terrain");
 		assertEquals(bien, agence.checkVoeux(acheteur));
 	}
 

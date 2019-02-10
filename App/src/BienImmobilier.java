@@ -1,23 +1,29 @@
 
+
 import java.util.Date ;
 
-public class BienImmobilier {
-	 String adresse ;
-	 String orientation;
-	 int prix;
-	 String dateVente ;
-	 String dateDeDisponibilite;
-	 int numeroBienImmobilier;
-	 static Personne vendeur;
-	 Personne acheteur;
 
-	public BienImmobilier (String adresse , String orientation , int prix , String dateVente ,String dateDeDisponibilite ,int numeroBienImmobilier, Personne vendeur){
+/*
+ * @author Kamal Aarab and Massi Ouldrabah
+ */
+
+
+
+public class BienImmobilier {
+	String adresse ;
+	String orientation;
+	int prix;
+	String dateVente;
+	String dateDeDisponibilite;
+	 Personne vendeur;
+	Personne acheteur;
+
+	public BienImmobilier (String adresse , String orientation , int prix, String dateDeDisponibilite, Personne vendeur){
 		this.adresse = adresse;
 		this.orientation = orientation ;
 		this.prix = prix ;
-		this.dateVente = dateVente;
+		this.dateVente = null;
 		this.dateDeDisponibilite = dateDeDisponibilite;
-		this.numeroBienImmobilier = numeroBienImmobilier;
 		this.vendeur = vendeur;
 		this.acheteur = null;
 	}
@@ -67,17 +73,22 @@ public class BienImmobilier {
 	 * 
 	 * @return numeroBienImmobilier of BienImmobilier
 	 */
-	public int getnumeroBienImmobilier(){
-		return this.numeroBienImmobilier;
-	}
+	//public int getnumeroBienImmobilier(){
+	//	return this.numeroBienImmobilier;
+	//}
 
 	/**
 	 * @return the vendeur of BienImmobilier
 	 */
-	public static Personne getVendeur() {
-		return vendeur;
+	public Personne getVendeur() {
+		return this.vendeur;
+	}
+	
+	public String toString() {
+		return "Vendu par "+this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
 	}
 }
+
 
 
 

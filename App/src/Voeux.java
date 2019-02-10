@@ -1,4 +1,5 @@
 
+
 public class Voeux {
 	 
 	 int prixSouhaitee;
@@ -9,7 +10,8 @@ public class Voeux {
 	 int surfaceSolSouhaitee;
 	 int longueurFacadeSouhaiteeTERR;
 	 int nombreDePieceAPP;
-	public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien, int surfaceSolSouhaitee,int longueurFacadeSouhaiteeTERR,int nombreDePieceAPP ) {
+	
+	 public Voeux( int prixSouhaitee , int surfaceSouhaitee, String localisationSouhaitee, int nbrPieceSouhaitee, String typeDeBien, int surfaceSolSouhaitee,int longueurFacadeSouhaiteeTERR,int nombreDePieceAPP ) {
 		
 		 this.prixSouhaitee = prixSouhaitee;
 		 this.surfaceSouhaitee = surfaceSouhaitee;
@@ -50,3 +52,4 @@ public class Voeux {
 	
 	
 }
+
