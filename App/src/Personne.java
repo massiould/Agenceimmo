@@ -123,7 +123,7 @@ public class Personne {
 	 * @return personne
 	 */
 	public String toString() {
-		return this.getNom() + " Tel :"+ this.getNumeroDeTelephone();
+		return this.getNom() + " Tel : "+ this.getNumeroDeTelephone();
 	}
 }
 

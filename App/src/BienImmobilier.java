@@ -81,7 +81,7 @@ public class BienImmobilier {
 	}
 	
 	public String toString() {
-		return "Vendu par "+this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
+		return "Vendu par "+ this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
 	}
 }
 
