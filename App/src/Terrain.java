@@ -3,8 +3,6 @@
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-import java.util.Date;
-
 public class Terrain extends BienImmobilier {
 
 	int surfaceSol;
@@ -26,4 +24,3 @@ public class Terrain extends BienImmobilier {
 	}
 }
 
-	

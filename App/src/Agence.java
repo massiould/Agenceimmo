@@ -1,11 +1,8 @@
 
-
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -53,7 +50,7 @@ public class Agence {
 			break;
 
 		case "appartement":
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison a la vente");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement a la vente");
 			System.out.println("");
 			System.out.println("Donner la surface habitable :");
 			int surfaceHabitable = clavier.nextInt();
@@ -69,7 +66,7 @@ public class Agence {
 			break;
 
 		case "maison":
-			System.out.println(">>> Saisir les informations suivante pour l'ajout d'un appartement a la vente");
+			System.out.println(">>> Saisir les informations suivante pour l'ajout d'une maison a la vente");
 			System.out.println("");
 			System.out.println("Donner le nombre de pieces :");
 			int nombreDePiece1 = clavier.nextInt();
@@ -82,7 +79,7 @@ public class Agence {
 			this.listeClient.add(vendeur);
 		}
 		} catch(Exception e) {
-			System.out.println("Erreur de saisie");
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -104,9 +101,9 @@ public class Agence {
 		Personne acheteur = this.listeClient.get(numAcheteur);
 		this.listeBienImmobilierVendu.add(bienImmobilier);
 		this.listeBienImmobilier.remove(bienImmobilier);
-		RDV rdvVente = new RDV(dateRDV, "RDV Vente", bienImmobilier.vendeur, acheteur);
-		
+		RDV rdvVente = new RDV(dateRDV, TypeRDV.VENTE, bienImmobilier.vendeur, acheteur);	
 	}
+	
 	/**
 	 * Permet d'ajouter un client a l'agence pour pouvoir lui proposer des services par la suite
 	 * 
@@ -120,7 +117,7 @@ public class Agence {
 			System.out.println("Le client a ete inscrit dans l'agence.");
 		}
 	}
- 
+
 	/**
 	 * Permet de contacter un acheteur qui a un bien immobilier conforme a son voeux 
 	 * 
@@ -128,7 +125,7 @@ public class Agence {
 	 * 				Elle prend en parametre la personne a contacter.
 	 */
 	public String checkVoeux(Personne P){
-		String choix ="";
+		String choix ="patate";
 		for (  BienImmobilier i : this.listeBienImmobilier) {
 			if  (P.voeux.typeDeBien == "terrain" && (i instanceof Terrain)) {
 				Terrain TER = (Terrain)i;
@@ -145,7 +142,7 @@ public class Agence {
 				if(P.voeux.prixSouhaitee == i.prix && P.voeux.localisationSouhaitee == i.adresse && P.voeux.nbrPieceSouhaitee== APP.nombreDePiece ) {
 					choix=("Cet appartement pourrait vous convenir: \n" +i +APP);
 				}
-				/**else { 
+				/**else {
 					choix=("Desole Pas d'appartement correspandant a votre recherche ");
 				}*/
 			}
@@ -175,7 +172,7 @@ public class Agence {
 	 * Permet d'organiser un rendez-vous
 	 * @param bienImmobilier, personne
 	 */
-	void organiserRDV(BienImmobilier bienImmobilier, Personne personne, String dateRDV, String typeRDV) {
+	void organiserRDV(BienImmobilier bienImmobilier, Personne personne, String dateRDV, TypeRDV typeRDV) {
 		Personne vendeur = bienImmobilier.vendeur;
 		RDV rdv = new RDV(dateRDV, typeRDV, vendeur, personne);
 		this.listeRDV.add(rdv);	
@@ -224,11 +221,11 @@ public class Agence {
 	 * 			Liste des biens immobilier de Agence
 	 */
 	String getBienImmobilierString(){
-		String rep = "";
-		for (int i = 0; i < this.listeBienImmobilier.size() - 1; i ++) {
-			rep = "Index : "+ i + this.listeBienImmobilier.get(i).toString();
+		String rep = "[";
+		for (int i = 0; i < this.listeBienImmobilier.size(); i ++) {
+			rep = "Index : "+ i +" " + this.listeBienImmobilier.get(i).toString();
 		}
-		return rep;
+		return rep += "]";
 	}
 	
 	/**
@@ -238,11 +235,11 @@ public class Agence {
 	 * 			Liste des clients de Agence
 	 */
 	String getClients() {
-		String rep = "";
-		for (int i = 0; i < this.listeClient.size() -1; i++) {
-			rep = "Index : "+i+this.listeClient.get(i).toString();
+		String rep = "[";
+		for (int i = 0; i < this.listeClient.size(); i++) {
+			rep = "Index : "+i+ " " + this.listeClient.get(i).toString();
 		}
-		return rep;
+		return rep += "]";
 	}
 }
-
+>>>>>>> cd725fcdb6c689e9a31f8466848ed192336d2086

@@ -1,13 +1,11 @@
 
 
-import java.util.Date ;
-
 
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-
+import java.util.Date ;
 
 public class BienImmobilier {
 	String adresse ;
@@ -15,7 +13,7 @@ public class BienImmobilier {
 	int prix;
 	String dateVente;
 	String dateDeDisponibilite;
-	 Personne vendeur;
+	Personne vendeur;
 	Personne acheteur;
 
 	public BienImmobilier (String adresse , String orientation , int prix, String dateDeDisponibilite, Personne vendeur){
@@ -85,10 +83,9 @@ public class BienImmobilier {
 	}
 	
 	public String toString() {
-		return "Vendu par "+this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
+		return "Vendu par "+ this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
 	}
 }
-
 
 
 
