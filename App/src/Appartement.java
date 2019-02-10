@@ -1,3 +1,4 @@
+
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
@@ -67,3 +68,4 @@ public class Appartement extends BienImmobilier {
 		this.chargesMensuelles = chargesMensuelles;
 	}
 }
+

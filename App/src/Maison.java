@@ -10,12 +10,15 @@ public class Maison extends BienImmobilier{
 		int nombreEtage;
 		String moyenDeChauffage;
 		
-	public Maison(String adresse, String orientation, int prix, String dateDeDisponibilite,Personne vendeur, int surfaceHabitable, int nombreDePiece, int nombreEtage, String moyenDeChauffage) {
+
+	public Maison(String adresse, String orientation, int prix, String dateDeDisponibilite,Personne vendeur,
+			int surfaceHabitable, int nombrePiece, int nombreEtage,String moyenDeChauffage) {
 		super(adresse, orientation, prix, dateDeDisponibilite, vendeur);
-		this.surfaceHabitable = surfaceHabitable;
-		this.nombreDePiece = nombreDePiece;
-		this.nombreEtage = nombreEtage;
-		this.moyenDeChauffage = moyenDeChauffage;
+		this.setMoyenDeChauffage(moyenDeChauffage);
+		this.setNombreEtage(nombreEtage);
+		this.setNombrePiece(nombrePiece);
+		// TODO Auto-generated constructor stub
+
 	}
 
 	/**

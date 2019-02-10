@@ -1,3 +1,4 @@
+
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
@@ -22,3 +23,4 @@ public class Terrain extends BienImmobilier {
 		return surfaceSol;
 	}
 }
+
