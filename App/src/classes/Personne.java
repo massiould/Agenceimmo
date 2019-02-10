@@ -1,10 +1,16 @@
+package classes;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-public class Personne {
+public class Personne implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3655884138078119163L;
 	String nom;
 	String adressePersonne;
 	String mail;
@@ -118,12 +124,5 @@ public class Personne {
 		return this.numeroDeTelephone;
 	}
 
-	/**
-	 * Retourne la représentation d'une personne
-	 * @return personne
-	 */
-	public String toString() {
-		return this.getNom() + " Tel : "+ this.getNumeroDeTelephone();
-	}
 }
 

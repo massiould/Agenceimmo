@@ -1,10 +1,17 @@
+package classes;
+
+import java.io.Serializable;
+
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-import java.util.Date;
 
-public class Maison extends BienImmobilier{
+public class Maison extends BienImmobilier implements Serializable{
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7320501808614303050L;
 		int surfaceHabitable;
 		int nombreDePiece;
 		int nombreEtage;

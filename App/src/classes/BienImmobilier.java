@@ -1,11 +1,17 @@
+package classes;
+
+import java.io.Serializable;
 
 /*
  * @author Kamal Aarab and Massi Ouldrabah
  */
 
-import java.util.Date ;
 
-public class BienImmobilier {
+public class BienImmobilier implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7749136572413808196L;
 	String adresse ;
 	String orientation;
 	int prix;
@@ -66,14 +72,6 @@ public class BienImmobilier {
 	}
 	
 	/**
-	 * 
-	 * @return numeroBienImmobilier of BienImmobilier
-	 */
-	//public int getnumeroBienImmobilier(){
-	//	return this.numeroBienImmobilier;
-	//}
-
-	/**
 	 * @return the vendeur of BienImmobilier
 	 */
 	public Personne getVendeur() {
@@ -81,7 +79,7 @@ public class BienImmobilier {
 	}
 	
 	public String toString() {
-		return "Vendu par "+ this.vendeur + " Prix : "+ this.prix + " Adresse : "+ this.adresse;
+		return "Prix : "+ this.prix + " Adresse : "+ this.adresse;
 	}
 }
 
